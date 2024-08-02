@@ -20,7 +20,8 @@ def register():
         comm = "insert into userdata values('" + uid + "' , 500);"
         cur.execute(comm)
         con.commit()
-        return {"blocks": [
+        return { "response_type": "in_channel",
+                "blocks": [
             {
                 "type": "section",
                 "response_type": "in_channel",
