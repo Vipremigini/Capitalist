@@ -2,6 +2,7 @@ from flask import Flask, request
 import random
 import psycopg2
 import os
+import requests
 
 con = psycopg2.connect(database="verceldb", user='default', password=os.environ['POSTGRES_PASSWORD'], host=os.environ["POSTGRES_HOST"])
 
@@ -37,10 +38,13 @@ def register():
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "You are already registered"
+                    "text": str(request.form)
                 }
             }]}
         
+@app.post("/api/interact")
+def reply():
+    
 
 
 @app.post("/api/try")
