@@ -14,7 +14,7 @@ app = Flask(__name__)
 def register():
     uid = request.form.get("user_id")
     comm = 'select uid from userdata where uid = "' + uid + '"'
-    cur.execute(comm)
+    cur.execute(str(comm))
     data = cur.fetchall()
     if data == False:
         comm = "insert into usedata values("" + uid + "" , 500);"
