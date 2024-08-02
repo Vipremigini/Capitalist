@@ -17,7 +17,7 @@ def trial():
     leng = len(lines)
     randnum = random.randint(0, leng)
     fact = lines[randnum]
-    cur.execute("insert into try values("adi");")
+    cur.execute("insert into try values(3);")
     
     return {"blocks": [
     {
