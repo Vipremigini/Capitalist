@@ -18,12 +18,14 @@ def trial():
     randnum = random.randint(0, leng)
     fact = lines[randnum]
     cur.execute("insert into try values(3);")
+    data = cur.fetchall()
+    data = str(data)
     
     return {"blocks": [
     {
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": fact
+        "text": data
       }
     }]}
