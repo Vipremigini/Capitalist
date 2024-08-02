@@ -35,7 +35,7 @@ def register():
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "You are already registered!"
+                    "text": str(data)
                 }
             }]}
         
