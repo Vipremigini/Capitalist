@@ -23,6 +23,7 @@ def register():
         return {"blocks": [
             {
                 "type": "section",
+                "response_type": "in_channel",
                 "text": {
                     "type": "mrkdwn",
                     "text": "Registered successfully!! You now have 500 hack dollars"
