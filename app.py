@@ -42,8 +42,8 @@ def register():
                 }
             }]}
         
-@app.post("/api/interact")
-def reply():
+#@app.post("/api/interact")
+#def reply():
     
 
 
