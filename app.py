@@ -30,10 +30,10 @@ def register():
                 }
             }]}
     else:
-        return {"blocks": [
+        return { "response_type": "in_channel",
+                "blocks": [
             {
                 "type": "section",
-                "response_type": "in_channel",
                 "text": {
                     "type": "mrkdwn",
                     "text": str(data)
