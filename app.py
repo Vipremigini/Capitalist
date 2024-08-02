@@ -16,7 +16,7 @@ def register():
     comm = "select uid from userdata where uid = '" + uid + "'"
     cur.execute(str(comm))
     data = cur.fetchall()
-    if data == False:
+    if data == []:
         comm = "insert into usedata values("" + uid + "" , 500);"
         cur.execute(comm)
         con.commit()
@@ -33,6 +33,7 @@ def register():
         return {"blocks": [
             {
                 "type": "section",
+                "response_type": "in_channel",
                 "text": {
                     "type": "mrkdwn",
                     "text": str(data)
