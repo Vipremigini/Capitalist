@@ -18,6 +18,7 @@ def trial():
     randnum = random.randint(0, leng)
     fact = lines[randnum]
     cur.execute("insert into try values(3);")
+    cur.execute("select * from try")
     data = cur.fetchall()
     data = str(data)
     
