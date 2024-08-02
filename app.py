@@ -18,6 +18,7 @@ def register():
     data = cur.fetchall()
     if data == False:
         comm = "insert into usedata values("" + uid + "" , 500);"
+        cur.execute(comm)
         con.commit()
         return {"blocks": [
             {
