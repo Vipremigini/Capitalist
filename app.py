@@ -3,9 +3,9 @@ import random
 import psycopg2
 import os
 
-connection = psycopg2.connect(database="verceldb", user='default', password=os.environ['POSTGRES_PASSWORD'], host=os.environ["POSTGRES_HOST"])
+con = psycopg2.connect(database="verceldb", user='default', password=os.environ['POSTGRES_PASSWORD'], host=os.environ["POSTGRES_HOST"])
 
-cur = connection.cursor()
+cur = con.cursor()
 
 f = open("facts.txt","r")
 lines = f.readlines()
@@ -18,6 +18,7 @@ def trial():
     randnum = random.randint(0, leng)
     fact = lines[randnum]
     cur.execute("insert into try values(763);")
+    con.commit()
     cur.execute("select * from try")
     data = cur.fetchall()
     data = str(data)
