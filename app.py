@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.post("/api/register")
 def register():
     uid = request.form.get("user_id")
-    comm = 'select uid from userdata where uid = "' + uid + '"'
+    comm = "select uid from userdata where uid = '" + uid + "'"
     cur.execute(str(comm))
     data = cur.fetchall()
     if data == False:
