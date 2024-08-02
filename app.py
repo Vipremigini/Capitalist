@@ -7,10 +7,37 @@ con = psycopg2.connect(database="verceldb", user='default', password=os.environ[
 
 cur = con.cursor()
 
-f = open("facts.txt","r")
-lines = f.readlines()
 
 app = Flask(__name__)
+
+@app.post("/api/register")
+def register():
+    uid = request.form.get("user_id")
+    comm = "select uid from userdata where uid = "" + uid + """
+    cur.execute(comm)
+    data = cur.fetchall()
+    if data == False:
+        comm = "insert into usedata values("" + uid + "" , 500);"
+        con.commit()
+        return {"blocks": [
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Registered successfully!! You now have 500 hack dollars"
+                }
+            }]}
+    else:
+        return {"blocks": [
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "You are already registered!"
+                }
+            }]}
+        
+
 
 @app.post("/api/try")
 def trial():
