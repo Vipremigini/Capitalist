@@ -65,7 +65,7 @@ def buy():
 			"label": {
 				"type": "plain_text",
 				"text": "hi",
-				"emoji": true
+				
 			}
 		}
 	]
