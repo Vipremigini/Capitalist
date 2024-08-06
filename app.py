@@ -73,22 +73,3 @@ def buy():
 
 
 
-@app.post("/api/try")
-def trial():
-    leng = len(lines)
-    randnum = random.randint(0, leng)
-    fact = lines[randnum]
-    cur.execute("insert into try values(763);")
-    con.commit()
-    cur.execute("select * from try")
-    data = cur.fetchall()
-    data = str(data)
-    
-    return {"blocks": [
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": data
-      }
-    }]}
