@@ -38,7 +38,7 @@ def register():
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": str(request.form)
+                    "text": "You are already registered
                 }
             }]}
         
@@ -51,7 +51,26 @@ def reply():
     obj = {"channel": "C07F7MP99MH","text": data}
     x = requests.post(url,Authorization = os.environ['buoat'],  json = obj)
 
-    
+
+@app.post("/api/buy")
+def buy():
+    return { "response_type": "in_channel",
+	"blocks": [
+		{
+			"type": "input",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "hi",
+				"emoji": true
+			}
+		}
+	]
+}
+
 
 
 @app.post("/api/try")
