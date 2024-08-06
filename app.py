@@ -42,8 +42,15 @@ def register():
                 }
             }]}
         
-#@app.post("/api/interact")
-#def reply():
+@app.post("/api/interact")
+def reply():
+    purl = "https://slack.com/api/chat.postMessage"
+    data = request.form
+    data = str(data)
+    
+    obj = {"channel": "C07F7MP99MH","text": data}
+    x = requests.post(url,Authorization = os.environ['buoat'],  json = obj)
+
     
 
 
