@@ -3,7 +3,7 @@ from flask import Flask, request
 from slack_bolt import App, Say
 from slack_bolt.adapter.flask import SlackRequestHandler
 app = Flask(__name__)
-bolt_app = App(token=os.environ.get("buoat"), signing_secret=os.environ.get("sss"))
+bolt_app = App(token=os.environ.get("buoat"), signing_secret=os.environ.get("ss"))
 handler = SlackRequestHandler(bolt_app)
 
 
