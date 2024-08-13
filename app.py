@@ -2,7 +2,7 @@ import os
 from slack_sdk import WebClient as app
 from slack_sdk.errors import SlackApiError 
 
-slack_token = os.environ.get('buoat')
+slack_token = str(os.environ.get('buoat'))
 
 
 client = app(token=slack_token)
