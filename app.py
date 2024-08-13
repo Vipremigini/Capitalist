@@ -5,7 +5,7 @@ from slack_sdk.errors import SlackApiError
 slack_token = os.environ.get('buoat')
 
 
-client = WebClient(token=slack_token)
+client = app(token=slack_token)
 
 try:
 	response = client.chat_postMessage(
